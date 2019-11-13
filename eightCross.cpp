@@ -4,11 +4,90 @@ using namespace std;
 
 //prototyping functions
 bool ok(int[], int);
+bool bacTrac(int*, int&);
 void print(int[]);
-
+bool moveFunc(int*, int&);
+int bro();
 
 //main function
-int main() {
+int main(){
+
+	int b[8], x = 0;
+	//moveFunc(b, x);
+	bro();
+
+}
+
+
+bool bacTrac(int *a, int &c){
+
+	//reset current
+	*(a+c) = 0;
+
+	//back up
+	c--;
+
+	//no solutions
+	if(c < 0) return false;
+
+	//inc prev
+	(*(a+c))++;
+
+	//check bounds
+	if((*(a+c)) >7) return bacTrac(a, c);
+
+	//passed all checks
+	return true;
+
+
+
+
+}
+
+
+//this function expects to be passed an array of sz 8
+//the call will initiate from the main func then the func will run auto
+//when there are no more solutions the func will stop
+//the sol purpose of this function is to move the col
+bool moveFunc(int *a, int &c){
+
+	//increment 
+	c++;
+
+	//check bounds
+	if(c > 7){
+
+		//solution found
+		print(a);
+
+		//if bacTrac fails there are no more solutions
+		if(!bacTrac(a, c)) return false;
+	}
+
+	while(!ok(a, c)){
+
+		//trying until successful number is found
+		(*(a+c))++;
+
+		//check bounds
+		if((*(a+c)) >=8) {
+		       if(!bacTrac(a, c)){
+				return false;
+		       }
+		}
+
+
+		
+	}
+	
+	return moveFunc(a, c);
+
+}
+
+
+
+
+int bro() {
 	
 	// initialize…
 	int b[8], c = 0;
