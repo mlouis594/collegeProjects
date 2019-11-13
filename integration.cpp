@@ -11,8 +11,7 @@ typedef double FUNC(double);
 // (when you call f(x) it'll call whatever function you passed as the first parameter)
 
 
-`Q
-:q
+
 
 
 
