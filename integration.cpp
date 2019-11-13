@@ -21,7 +21,7 @@ double integrate(FUNC f, double a, double b) {
 	// Fill in.
 	// loop x from a to b, each x represents width of rectangle (0.0001)
 	// area += height * width, 
-e width = 0.0001, height = f(x + 0.0001/2) (the mid-point is more accurate)
+	// width = 0.0001, height = f(x + 0.0001/2) (the mid-point is more accurate)
 	// return area;
 	double res = 0;
 	for (double x = a; x < b;x+=0.0001) {
