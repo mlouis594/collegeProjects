@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 
+//Author: Marlon Louis
 //N Queens: 
 //creating an n*n board and counting the number of existing solutions
 
